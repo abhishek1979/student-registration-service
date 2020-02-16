@@ -6,5 +6,5 @@ CREATE TABLE student (
   course VARCHAR(250) NOT NULL  
 );
  
-INSERT INTO student (name, course) VALUES ('Abhishek', 'Java 13');
-INSERT INTO student (name, course) VALUES  ('Mridula', 'Angular');
+INSERT INTO student (name, course) VALUES ('Abhishek', 'Java 11');
+INSERT INTO student (name, course) VALUES  ('Mridula', 'Angular 9');
