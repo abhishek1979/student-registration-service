@@ -5,6 +5,7 @@ package com.abhishek.student.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,6 +34,26 @@ public class StudentServiceImpl implements StudentService{
 	public Iterable<Student> getAllStudents() {
 		
 		return studentRepository.findAll();
+	}
+	
+	@Override
+	public Optional<Student> getStudentById(Long Id) {
+		return studentRepository.findById(Id);		
+	}
+	
+	@Override
+	public void saveStudent(Student student) {		
+		studentRepository.save(student);
+	}
+	
+	@Override
+	public void updateStudent(Student student) {		
+		studentRepository.save(student);
+	}
+	
+	@Override
+	public void deleteStudent(Long Id) {		
+		studentRepository.deleteById(Id);
 	}
 
 	

@@ -6,19 +6,24 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.12.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<version>2.3.0.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->	
 	</parent>
 	<groupId>com.abhishek.student</groupId>
 	<artifactId>student-registration-service</artifactId>
-	<version>app</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>student-registration-service</name>
 	<description>student-registration-service</description>
 
 	<properties>
-		<java.version>11</java.version>
+		<!-- <java.version>14</java.version> -->
 		 <!-- The main class to start by executing java -jar -->
       	<start-class>com.abhishek.student.StudentRegistrationServiceApplication</start-class>
+      	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    	<maven.compiler.source>11</maven.compiler.source>
+    	<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
+    	<junit.jupiter.version>5.5.2</junit.jupiter.version>
+    	<junit.platform.version>1.5.2</junit.platform.version>
 	</properties>
 
 	<dependencies>
@@ -60,7 +65,20 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>		
+		</dependency>	
+		<dependency>
+       		<groupId>org.junit.jupiter</groupId>
+        	<artifactId>junit-jupiter-engine</artifactId>
+        	<version>${junit.jupiter.version}</version>
+        	<scope>test</scope>
+    	</dependency>
+    	<dependency>
+        	<groupId>org.junit.platform</groupId>
+        	<artifactId>junit-platform-runner</artifactId>
+        	<version>${junit.platform.version}</version>
+        	<scope>test</scope>
+    	</dependency>
+		
 		<!-- <dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc8</artifactId>
@@ -111,6 +129,26 @@
 					</execution>
 				</executions>
 			</plugin>
+			<!-- Docker -->
+			<!-- <plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>dockerfile-maven-plugin</artifactId>
+				<version>1.4.10</version>
+				<executions>
+					<execution>
+						<id>default</id>
+						<goals>
+							<goal>build</goal>
+							<goal>push</goal> 
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<repository>abhishek1979/${project.artifactId}</repository>
+					<tag>${project.version}</tag>
+					<skipDockerInfo>true</skipDockerInfo>
+				</configuration>
+			</plugin> -->
 		</plugins>
 	</build>
 
